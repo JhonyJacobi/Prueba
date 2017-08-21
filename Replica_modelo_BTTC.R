@@ -3,15 +3,10 @@ rm(list = ls())
 setwd("D:/Mining/Negocios Fijo/Contactabilidad/01. Modelo BTTC/04. Modelos")
 #getwd()
 
-library(RODBC)
-library(rminer)
-library(randomForest)
-library(dplyr)
-library(lubridate)
-library(ROCR)
-
 # Conección ODBC
 con_ODBC <- odbcConnect(dsn="SB_MIN",uid="JJACOBIR",pwd="cobijja") 
+
+Library(rpart)
 
 i <- 0
 
