@@ -1,10 +1,10 @@
 rm(list = ls())
 
-setwd("D:/Mining/Negocios Fijo/Contactabilidad/01. Modelo BTTC/04. Modelos")
+setwd("definir ruta")
 #getwd()
 
-# Conección ODBC
-con_ODBC <- odbcConnect(dsn="SB_MIN",uid="JJACOBIR",pwd="cobijja") 
+# ConecciÃ³n ODBC
+con_ODBC <- odbcConnect(dsn="BD_NAME",uid="USER",pwd="PASSWORD") 
 
 Library(rpart)
 
@@ -12,7 +12,7 @@ i <- 0
 
 for (i in 1:4) {
     
-  query <- paste0("SELECT * FROM JJR_REPLICA_CONTACTO_R",i)
+  query <- paste0("SELECT * FROM TABLENAME",i)
   
   data <- sqlQuery(con_ODBC, as.is = F, query, believeNRows=FALSE)
   data <- filter(data,ZONAS!='')
